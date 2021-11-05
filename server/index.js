@@ -8,6 +8,9 @@ const app = express();
 //parse json from body
 app.use(express.json())
 
+//express.static
+app.use(express.static(path.join(__dirname, '/public/build')));
+
 const messagesBaseURL = "/api/messages";
 
 app.post(messagesBaseURL, controller.create);
